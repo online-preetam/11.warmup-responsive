@@ -4,7 +4,7 @@ const mainMenu = document.querySelector('.main-menu');
 
 
 
-menuToggle.addEventListener('click', (e) =>{
+menuToggle.addEventListener('click', () =>{
   
   menuToggle.classList.toggle('active');
   mainMenu.classList.toggle('open');
@@ -14,19 +14,13 @@ menuToggle.addEventListener('click', (e) =>{
  document.addEventListener('click', (e) => {
       if (!menuToggle.contains(e.target) && !mainMenu.contains(e.target)) {
         menuToggle.classList.remove('active');
+        mainMenu.classList.remove('open');
       }
 });
 
 mainMenu.addEventListener('click', (e) => {
   if (e.target.closest('a')) {
     menuToggle.classList.remove('active');
+    mainMenu.classList.remove('open');
   }
 });
-/*document.querySelectorAll('.main-menu a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        
-        menuToggle.classList.remove('active');  
-        mainMenu.classList.remove('open');    
-       
-      });
-    });*/
